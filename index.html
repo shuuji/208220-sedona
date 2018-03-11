@@ -5,7 +5,6 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
-
     <header class="main-header">
       <nav class="main-navigation">
         <a class="logo" href="#">
@@ -21,7 +20,8 @@
     </header>
 
     <main class="container">
-      <section class="main-picture">
+      <section class="first-screen">
+        <img src="http://placehold.it/450x350" alt="Welcome to Sedona">
       </section>
 
       <section class="main-text">
@@ -87,14 +87,14 @@
         <h1 class="visually-hidden">Найти гостиницу в Седоне</h1>
         <b>Заинтересовались?</b>
         <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне.</p>
-        <div class="interesting-form">
+        <form class="interesting-form" id="interesting-from-id">
           <p>Поиск гостиницы в Седоне</p>
-          <p>Дата заезда: </p>
-          <p>Дата выезда: </p>
-          <p>Взрослые: </p>
-          <p>Дети: </p>
-          <button>Найти</button>
-        </div>
+          <label>Дата заезда: <input type="date" name="in" id="date-in"></label>
+          <label>Дата выезда: <input type="date" name="out" id="date-out"></label>
+          <label>Взрослые: <input type="number" name="adults" id="adults"></label>
+          <label>Дети: <input type="number" name="children" id="children"></label>
+          <input type="submit" class="find-button" id="find-button-id" value="Найти">
+        </form>
       </section>
     </main>
 
