@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Бронирование жилья в Седоне</title>
-</head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <title>Бронирование жилья в Седоне</title>
+  </head>
+  <body>
     <header class="main-header">
-        <nav class="main-navigation">
-            <img src="http://placehold.it/138x70" alt="Логотип">
-            <ul class="navigation">
-              <li><a href="#">Информация</a></li>
-              <li><a href="#">Фото и видео</a></li>
-              <li><a href="#">Карта штата</a></li>
-              <li><a href="#">Гостиницы</a></li>
-            </ul>
-          </nav>
+      <nav class="main-navigation">
+        <img src="http://placehold.it/138x70" alt="Логотип">
+        <ul class="navigation">
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Фото и видео</a></li>
+          <li><a href="#">Карта штата</a></li>
+          <li><a href="#">Гостиницы</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
       <h1 class="visually-hidden">Бронирование жилья в Седоне</h1>
-      <section class="hotels-filter">
-        <h2 class="visually-hidden">Параметры поиска жилья</h2>
-        <p>Инфраструктура:</p>
-        <ul class="infrastructure-list">
-          <li>Бассейн</li>
-          <li>Парковка</li>
-          <li>WI-FI</li>
-        </ul>
 
-        <p>Тип жилья:</p>
-        <ul class="rooms-list">
-          <li>Гостиница</li>
-          <li>Мотель</li>
-          <li>Апартаменты</li>
-        </ul>
-
-        <p>Стоимость в сутки (Р):</p>
-        <ul class="price-list">
-          <li>от 0</li>
-          <li>до 3000</li>
-        </ul>
-        <a href="#">Показать</a>
-      </section>
+      <form class="hotels-filter" id="hotels-filter-id" oninput="priceout.value=price.value">
+        <fieldset>
+          <legend>Инфраструктура:</legend>
+          <label>Бассейн<input type="checkbox" name="pool" id="pool" checked></label>
+          <label>Парковка<input type="checkbox" name="parking" id="parking"></label>
+          <label>Wi-Fi<input type="checkbox" name="wifi" id="wifi"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Тип жилья:</legend>
+          <label>Гостиница<input type="checkbox" name="hotel" id="hotel" checked></label>
+          <label>Мотель<input type="checkbox" name="motel" id="motel" checked></label>
+          <label>Апартаменты<input type="checkbox" name="apartments" id="apartments" checked></label>
+        </fieldset>
+        <fieldset>
+          <legend>Стоимость в сутки (Р):</legend>
+          <label for="price">Стоимость в сутки  (Р):</label>
+          <div class="range-output">
+            <span>от 0</span>
+            <span>до <output name="priceout"></output></span>
+          </div>
+          <input type="range" name="price" id="price" min="0" max="3000" step="100">
+          <input type="submit" value="Показать">
+        </fieldset>
+      </form>
 
       <section class="hotels-sorting">
         <h2 class="visually-hidden">Сортировка найденного жилья</h2>
@@ -56,38 +58,66 @@
 
       <section class="hotels-catalog">
         <h2 class="visually-hidden">Каталог жилья</h2>
-        <div class="catalog-item">
+        <article class="catalog-item">
           <img src="http://placehold.it/138x70" alt="Гостиница">
-          <h3>Amara Resort & Spa</h3>
-          <span>Гостиница</span>
-          <span>от 4000 Р.</span>
-          <a class="button-more" href="#">Подробнее</a>
-          <a class="button-book" href="#">Забронировать</a>
-          <p>Рейтинг: 8,5</p>
-        </div>
-        <div class="catalog-item">
-            <img src="http://placehold.it/138x70" alt="Мотель">
-            <h3>Desert Quail Inn</h3>
-            <span>Мотель</span>
-            <span>от 3000 Р.</span>
+          <h1>Amara Resort & Spa</h1>
+          <div class="catalog-item-block">
+            <span>Гостиница</span>
             <a class="button-more" href="#">Подробнее</a>
-            <a class="button-book" href="#">Забронировать</a>
-            <p>Рейтинг: 8,9</p>
           </div>
-          <div class="catalog-item">
-              <img src="http://placehold.it/138x70" alt="Апартаменты">
-              <h3>Villas at Poco Diablo</h3>
-              <span>Апартаменты</span>
-              <span>от 2000 Р.</span>
-              <a class="button-more" href="#">Подробнее</a>
-              <a class="button-book" href="#">Забронировать</a>
-              <p>Рейтинг: 9,2</p>
-            </div>
+          <div class="catalog-item-block">
+            <span>от 4000 Р.</span>
+            <a class="button-book" href="#">Забронировать</a>
+          </div>
+          <div class="rating">
+            <p>Рейтинг: 8,5</p>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </article>
+        <article class="catalog-item">
+          <img src="http://placehold.it/138x70" alt="Мотель">
+          <h1>Desert Quail Inn</h1>
+          <div class="catalog-item-block">
+            <span>Мотель</span>
+            <a class="button-more" href="#">Подробнее</a>
+          </div>
+          <div class="catalog-item-block">
+            <span>от 3000 Р.</span>
+            <a class="button-book" href="#">Забронировать</a>
+          </div>
+          <div class="rating">
+            <p>Рейтинг: 8,9</p>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </article>
+        <article class="catalog-item">
+          <img src="http://placehold.it/138x70" alt="Апартаменты">
+          <h1>Villas at Poco Diablo</h1>
+          <div class="catalog-item-block">
+            <span>Апартаменты</span>
+            <a class="button-more" href="#">Подробнее</a>
+          </div>
+          <div class="catalog-item-block"> 
+            <span>от 2000 Р.</span>
+            <a class="button-book" href="#">Забронировать</a>
+          </div>
+          <div class="rating">
+            <p>Рейтинг: 9,2</p>
+            <i></i>
+            <i></i>
+          </div>
+        </article>
       </section>
     </main>
 
     <footer class="main-footer">
-        <a href="#">#VISITSEDONA</a>
+      <a href="#">#VISITSEDONA</a>
       <ul class="social-list">
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
@@ -95,5 +125,5 @@
       </ul>
       <a href="#">Website by <img src="http://placehold.it/25x25" alt="HTML-academy logo"></a>
     </footer>
-</body>
+  </body>
 </html>
